@@ -1,0 +1,68 @@
+﻿@model IndexViewModel;
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a asp-action="Create">Добавить товар</a>
+    <div class="ds container">
+        @foreach (Product p in Model.Products)
+        {
+            <div class="card-product">
+
+                <div class="card-product__img">
+                    @if (p.ImageProduct != null)
+                    {
+                        <img src="data:image/jpeg;base64,@(Convert.ToBase64String(p.ImageProduct))" />
+                    }
+                </div>
+
+                <div class="card-product__text">
+                    <div class="card-product__text_list">
+                        <p>@p.Id</p>
+                        <p>@p.ProductName</p>
+                        <p>@p.Price</p>
+                    </div>
+                    <div class="card-product__text_btn">
+                        <a href="">Купить</a>
+                    </div>
+                </div>
+
+            </div>
+         }
+
+
+
+        <div class="div-button">
+            @if (Model.PageViewModel.HasPreviousPage)
+            {
+                <a asp-action="Index" asp-route-page="@(Model.PageViewModel.PageNumber - 1)" class="btn ">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                    Назад
+                </a>
+            }
+
+            @if (Model.PageViewModel.HasNextPage)
+            {
+                <a asp-action="Index" asp-route-page="@(Model.PageViewModel.PageNumber + 1)" class="btn">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                    Вперед
+                </a>
+            }
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dsp {
+    margin: 15px 0 0 0;
+}
+
+.indent-left {
+    margin: 0 0 0 50px;
+}
+
+input {
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+}

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css"/>
+</head>
+<body>
+    <div class="navbar" role="navigation">
+        <a class="navbar-brand" href="#">SHOPS</a>
+    </div>
+    <div>
+        <div class="col-xs-3">
+            <p>Категории товаров</p>
+           
+        </div>
+    </div>
+    <div class="cpl-xs-8">
+        @RenderBody()
+    </div>
+</body>
+</html>
